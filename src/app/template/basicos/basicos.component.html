@@ -16,8 +16,9 @@
             type="text"
             class="form-control"
             placeholder="Nombre del producto"
-            required>
-          <span class="form-text text-danger">Deben ser mas de 3 letras</span>
+            required
+            minlength="3">
+          <span *ngIf="f.controls" class="form-text text-danger">Deben ser mas de 3 letras</span>
         </div>
       </div>
 
@@ -31,6 +32,7 @@
             type="number"
             class="form-control"
             placeholder="Precio del producto"
+            required=""
             min="0">
         </div>
       </div>
@@ -41,9 +43,10 @@
         <div class="col-sm-9">
           <input
             ngModel
-            name="Existencia"
+            name="existencia"
             type="number"
             class="form-control"
+            min="0"
             placeholder="Existencias del producto"/>
         </div>
       </div>
